@@ -1,0 +1,35 @@
+{
+  "name": "my-react",
+  "version": "1.0.0",
+  "description": "This is me learning React from Akshay Saini.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shadev-Kumar/My_React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Shadev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shadev-Kumar/My_React/issues"
+  },
+  "homepage": "https://github.com/Shadev-Kumar/My_React#readme",
+  "devDependencies": {
+    "parcel": "^2.9.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 10 chrome version",
+    "last 10 Firefox version"
+  ]
+}
