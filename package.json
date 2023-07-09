@@ -22,11 +22,17 @@
   "homepage": "https://github.com/Shadev-Kumar/My_React#readme",
   "devDependencies": {
     "parcel": "^2.9.2",
-    "process": "^0.11.10"
+    "postcss": "^8.4.25",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
   },
   "browserslist": [
     "last 10 chrome version",

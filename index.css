@@ -1,3 +1,4 @@
-#headingh1 {
-       color: rgb(127, 36, 52);
-}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
