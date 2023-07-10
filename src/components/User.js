@@ -4,16 +4,8 @@ const User = ({ name }) => {
   const [count] = useState(0)
 
   useEffect(() => {
-    // const timer = setInterval(() => {
-    //   console.log('Namaste React op')
-    // }, 1000)
-    // console.log('useEffect')
-
-    // return () => {
-    //   clearInterval(timer)
-    //   console.log('useEffect returned')
-    // }
   }, [])
+  
   return (
     <div className="user-card">
       <h2>Count: {count}</h2>

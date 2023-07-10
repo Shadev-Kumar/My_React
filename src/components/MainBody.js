@@ -66,7 +66,9 @@ const MainBody = () => {
     <div className=" justify-center">
       <div className="flex p-2  mt-4 mb-0 justify-center">
         <button
-          className="m-2 w-[20%] bg-[#d6ccc2] px-4 py-2 rounded-lg hover:bg-[#e3d5ca] active:bg-orange-500  transition ease-in-out delay-50 hover:scale-105 "
+          className={`m-2 w-[20%] ${
+            ratingFilter ? 'bg-[#d6ccc2]' : 'bg-green-600'
+          } px-4 py-2 rounded-lg  transition ease-in-out delay-50 hover:scale-105`}
           onClick={ratingFilter ? undoFilter : applyFilter}
         >
           <h3>Restaurants Rating 4.0 + </h3>

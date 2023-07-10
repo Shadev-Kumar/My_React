@@ -39,8 +39,8 @@ const Header = () => {
           />
         </a>
       </div>
-      <div className="flex items-center">
-        <ul className="flex p-4 mx-4 font-medium text-base	 cursor-pointer ">
+      <div className="flex items-center ">
+        <ul className="hidden md:flex p-4 mx-4 font-medium text-base  cursor-pointer">
           <li className="p-4  hover:text-orange-500">
             {' '}
             <i className="far fa-question-circle mx-1 "></i>
@@ -102,7 +102,7 @@ const Header = () => {
           ) : (
             <>
               <li className="p-4 hover:text-orange-500" onClick={handleLogin}>
-                <i className="far fa-user 1 animate-spin"></i> Sign in
+                <i className="far fa-user 1 "></i> Sign in
               </li>
             </>
           )}
