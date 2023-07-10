@@ -29,7 +29,7 @@ const Header = () => {
   }
 
   return (
-    <div className="flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
+    <div className=" flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
       <div className="logo-container">
         <a href="/" onClick={handleReload}>
           <img
@@ -107,6 +107,11 @@ const Header = () => {
             </>
           )}
         </ul>
+      </div>
+      <div className="hamburger mx-6 px-4 sm:bg-white md:hidden cursor-pointer">
+        <div className="line h-0.5 w-6 my-1 bg-black"></div>
+        <div className="line h-0.5 w-6 my-1 bg-black"></div>
+        <div className="line h-0.5 w-6 my-1 bg-black"></div>
       </div>
     </div>
   )
