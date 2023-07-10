@@ -10,6 +10,8 @@ function handleReload() {
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [showProfileOptions, setShowProfileOptions] = useState(false)
+  const [showElements, setshowElements] = useState(false)
+  const [onhover, setonhover] = useState(false)
 
   const onlinestatus = useOnlineStatus()
 
@@ -28,8 +30,19 @@ const Header = () => {
     setShowProfileOptions(!showProfileOptions)
   }
 
+  const handleElementsToogle = () => {
+    setshowElements(!showElements)
+  }
+
+  const handleHover=()=>{
+   setonhover(true)
+  }
+  const handleHoverleave=()=>{
+    setonhover(false)
+   }
+
   return (
-    <div className=" flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
+    <div className="header relative  flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
       <div className="logo-container">
         <a href="/" onClick={handleReload}>
           <img
@@ -39,8 +52,12 @@ const Header = () => {
           />
         </a>
       </div>
-      <div className="flex items-center ">
-        <ul className="hidden md:flex p-4 mx-4 font-medium text-base  cursor-pointer">
+      <div
+        className={`elements absolute top-[4.5rem] right-[0.5rem] md:flex md:top-[0rem] md:right-[0rem] md:justify-center items-center ${
+          showElements || onhover ? 'visible' : 'hidden'
+        }`}
+      >
+        <ul className="bg-[#d6ccc2] shadow-xl rounded-lg border-[0.1px]  border-[#d5bdaf]  md:flex  md:shadow-none md:border-0 md:px-4 md:pt-4 md:mx-4 font-medium text-base  cursor-pointer">
           <li className="p-4  hover:text-orange-500">
             {' '}
             <i className="far fa-question-circle mx-1 "></i>
@@ -71,7 +88,7 @@ const Header = () => {
                     {' '}
                     <i className="far fa-user mx-1"></i> Profile
                   </li>
-                  <div className="  w-44  rounded-lg  bg-[#d6ccc2] shadow-xl border-[0.1px]  border-[#d5bdaf] absolute top-[4.5rem] right-[1.5rem]">
+                  <div className="  w-44  rounded-lg  bg-[#d6ccc2] shadow-xl border-[0.1px]  border-[#d5bdaf] absolute top-[10.5rem] right-[7.9rem] md:top-[4.5rem] md:right-[1.5rem]">
                     <ul className="p-2 m-2 ">
                       <li className="p-2 hover:text-orange-500 hover:bg-[#e3d5ca] rounded-lg">
                         Orders
@@ -108,7 +125,12 @@ const Header = () => {
           )}
         </ul>
       </div>
-      <div className="hamburger mx-6 px-4 sm:bg-white md:hidden cursor-pointer">
+      <div
+        className="hamburger mx-6 px-4 sm:bg-white md:hidden cursor-pointer"
+        onClick={handleElementsToogle}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHoverleave}
+      >
         <div className="line h-0.5 w-6 my-1 bg-black"></div>
         <div className="line h-0.5 w-6 my-1 bg-black"></div>
         <div className="line h-0.5 w-6 my-1 bg-black"></div>

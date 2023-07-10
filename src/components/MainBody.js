@@ -64,33 +64,34 @@ const MainBody = () => {
     <Shimmer />
   ) : (
     <div className=" justify-center">
-      <div className="flex p-2  mt-4 mb-0 justify-center">
+      <div className="flex mr-1  p-1 mt-4 mb-0 md:p-2  md:mt-4  justify-between md:justify-center items-center">
         <button
-          className={`m-2 w-[20%] ${
-            ratingFilter ? 'bg-green-600' : 'bg-[#d6ccc2]'
-          } px-4 py-2 rounded-lg  transition ease-in-out delay-50 hover:scale-105`}
+          className={`order-2 h-8 m-1 md:w-2 w-[25%] text-xs md:text-base md:px-4 md:py-2 rounded-lg  transition ease-in-out delay-50 hover:scale-105 ${
+            ratingFilter ? 'bg-orange-500' : 'bg-[#d6ccc2]'
+          }`}
           onClick={ratingFilter ? undoFilter : applyFilter}
         >
-          <h3>Restaurants Rating 4.0 + </h3>
+          <h3 className="hidden md:block">Restaurants Rating 4.0 + </h3>
+          <h3 className="md:hidden">Rating 4.0 + </h3>
         </button>
 
-        <div className="m-2 w-[50%]">
-          <div className="px-8 relative items-center">
+        <div className=" w-[90%]">
+          <div className="px-1 relative items-center">
             <input
               type="text"
-              className=" bg-[#d6ccc2] w-[100%] px-4 py-2 rounded-3xl 	"
-              placeholder="Search for restaurants and cuisines"
+              className="h-8 bg-[#d6ccc2] w-[100%] px-4 py-2 rounded-3xl 	"
+              placeholder="Search "
               value={searchText}
               onChange={(e) => {
                 setsearchText(e.target.value)
               }}
             />
             {searchText.length === 0 && (
-              <i className="absolute top-3 right-12  text-gray-400 fas fa-search"></i>
+              <i className="absolute top-2 right-3 md:top-3 md:right-12 text-gray-400 fas fa-search"></i>
             )}
             {searchText.length > 0 && (
               <i
-                className="absolute top-3 right-12 text-gray-400 fas fa-times cursor-pointer"
+                className="absolute top-2 right-3 md:top-3 md:right-12 text-gray-400 fas fa-times cursor-pointer"
                 onClick={() => setsearchText('')}
               ></i>
             )}
