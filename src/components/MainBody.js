@@ -67,7 +67,7 @@ const MainBody = () => {
       <div className="flex p-2  mt-4 mb-0 justify-center">
         <button
           className={`m-2 w-[20%] ${
-            ratingFilter ? 'bg-[#d6ccc2]' : 'bg-green-600'
+            ratingFilter ? 'bg-green-600' : 'bg-[#d6ccc2]'
           } px-4 py-2 rounded-lg  transition ease-in-out delay-50 hover:scale-105`}
           onClick={ratingFilter ? undoFilter : applyFilter}
         >
