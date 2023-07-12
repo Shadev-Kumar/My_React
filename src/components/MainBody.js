@@ -64,9 +64,10 @@ const MainBody = () => {
     <Shimmer />
   ) : (
     <div className=" justify-center">
-      <div className="flex mr-1  p-1 mt-4 mb-0 md:p-2  md:mt-4  justify-between md:justify-center items-center">
+      <div className="flex mr-1  p-1 mt-4  md:p-2 sm:mx-10 md:mt-4 md:mx-[6.5rem] lg:mx-44 justify-between md:justify-center items-center">
+        
         <button
-          className={`order-2 h-8 m-1 md:w-2 w-[25%] text-xs md:text-base md:px-4 md:py-2 rounded-lg  transition ease-in-out delay-50 hover:scale-105 ${
+          className={` h-8 m-1 basis-1/4  sm:basis-1/4 md:basis-2/5 lg:basis-2/6 text-[10px] xsm:text-xs sm:text-sm md:text-base  md:px-4 md:py-2 lg:mr-[1.5rem] rounded-lg  transition ease-in-out delay-50 hover:scale-105 flex justify-center items-center ${
             ratingFilter ? 'bg-orange-500' : 'bg-[#d6ccc2]'
           }`}
           onClick={ratingFilter ? undoFilter : applyFilter}
@@ -74,9 +75,10 @@ const MainBody = () => {
           <h3 className="hidden md:block">Restaurants Rating 4.0 + </h3>
           <h3 className="md:hidden">Rating 4.0 + </h3>
         </button>
+        
 
-        <div className=" w-[90%]">
-          <div className="px-1 relative items-center">
+        <div className=" basis-3/4 sm:basis-3/4 md:basis-3/5 lg:basis-4/6 ">
+          <div className="px-1 relative flex justify-center items-center">
             <input
               type="text"
               className="h-8 bg-[#d6ccc2] w-[100%] px-4 py-2 rounded-3xl 	"
@@ -87,11 +89,11 @@ const MainBody = () => {
               }}
             />
             {searchText.length === 0 && (
-              <i className="absolute top-2 right-3 md:top-3 md:right-12 text-gray-400 fas fa-search"></i>
+              <i className="absolute top-2 right-3 md:top-2 md:right-4 text-gray-400 fas fa-search"></i>
             )}
             {searchText.length > 0 && (
               <i
-                className="absolute top-2 right-3 md:top-3 md:right-12 text-gray-400 fas fa-times cursor-pointer"
+                className="absolute top-2 right-3 md:top-2 md:right-4 text-gray-400 fas fa-times cursor-pointer"
                 onClick={() => setsearchText('')}
               ></i>
             )}

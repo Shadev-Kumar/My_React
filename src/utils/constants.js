@@ -8,4 +8,11 @@ export const RES_API_URL =
   'https://corsproxy.io?https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.2960587&lng=85.8245398&page_type=DESKTOP_WEB_LISTING'
 
 export const MENU_API_URL =
-'https://corsproxy.io?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.2960587&lng=85.8245398&restaurantId='
+  'https://corsproxy.io?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.2960587&lng=85.8245398&restaurantId='
+
+export const MENU_ITEMS_TYPE =
+  'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+
+export const MENU_ITEMS_IMAGE = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/'
+
+export const RESTAURANT_TYPE_KEY = 'type.googleapis.com/swiggy.presentation.food.v2.Restaurant'

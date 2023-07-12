@@ -7,9 +7,8 @@ const User = ({ name }) => {
   }, [])
   
   return (
-    <div className="user-card">
-      <h2>Count: {count}</h2>
-      <h2>Functional Component</h2>
+    <div className="user-card mt-2 bg-[#d6ccc2] p-2 rounded-lg">
+      <h2>Profile</h2>
       <h2>Name: {name}</h2>
       <h2>Location: Bbsr</h2>
       <h2>Twitter: Shadevkumar20</h2>
