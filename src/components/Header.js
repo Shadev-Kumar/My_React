@@ -34,12 +34,12 @@ const Header = () => {
     setshowElements(!showElements)
   }
 
-  const handleHover=()=>{
-   setonhover(true)
+  const handleHover = () => {
+    setonhover(true)
   }
-  const handleHoverleave=()=>{
+  const handleHoverleave = () => {
     setonhover(false)
-   }
+  }
 
   return (
     <div className="header relative  flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">

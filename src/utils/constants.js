@@ -13,4 +13,14 @@ export const MENU_API_URL =
 export const MENU_ITEMS_TYPE =
   'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
 
-export const MENU_ITEMS_IMAGE = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/'
+export const MENU_ITEMS_IMAGE =
+  'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/'
+
+export const DUMMY_IMAGE =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEz8bl8kP3-eHIaV5d_9ydHqiYHEyblmGFfFj8brV-saSOqZ-eCUDZQFHFofar_Nkkwsc&usqp=CAU'
+
+export const NONVEG_LOGO =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsNOENdNsWdiIEaDAwwOOwCSBWjiS8GFPbiA&usqp=CAU'
+
+export const VEG_LOGO =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoD0qDX71-VNZ40ujnq2m290VG6uauj21spw&usqp=CAU'
