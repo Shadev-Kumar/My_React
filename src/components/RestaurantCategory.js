@@ -18,7 +18,7 @@ const RestaurantCategory = ({ data, showItems, setshowIndex }) => {
           className="title pb-4 flex justify-between cursor-pointer "
           onClick={handleClick}
         >
-          <span className=" selection:bg-green-300 text-lg font-bold ">
+          <span className=" text-lg font-bold ">
             {data.title} ({data.itemCards.length})
           </span>
           <span className="mx-4">

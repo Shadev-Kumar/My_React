@@ -36,7 +36,7 @@ const ItemList = ({ items }) => {
                   ? item?.card?.info?.price / 100
                   : item?.card?.info?.defaultPrice / 100}
               </span>
-              <p className="text-xs font-thin">
+              <p className="text-xs font-light">
                 {item.card?.info?.description}
               </p>
             </div>

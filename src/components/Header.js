@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import { LOGO_URL } from '../utils/constants'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import userContext from '../utils/userContext'
 
 function handleReload() {
   window.location.reload(true)
@@ -14,6 +15,8 @@ const Header = () => {
   const [onhover, setonhover] = useState(false)
 
   const onlinestatus = useOnlineStatus()
+
+const {loggedInUser} = useContext(userContext)
 
   useEffect(() => {}, [isLoggedIn])
 
@@ -86,7 +89,7 @@ const Header = () => {
                     onClick={handleProfileClick}
                   >
                     {' '}
-                    <i className="far fa-user mx-1"></i> Profile
+                    <i className="far fa-user mx-1"></i> {loggedInUser}
                   </li>
                   <div className="  w-44  rounded-lg  bg-[#d6ccc2] shadow-xl border-[0.1px]  border-[#d5bdaf] absolute top-[10.5rem] right-[7.9rem] md:top-[4.5rem] md:right-[1.5rem]">
                     <ul className="p-2 m-2 ">
@@ -111,7 +114,7 @@ const Header = () => {
                     onClick={handleProfileClick}
                   >
                     {' '}
-                    <i className="far fa-user mx-1"></i> Profile
+                    <i className="far fa-user mx-1"></i> {loggedInUser}
                   </li>
                 </>
               )}
