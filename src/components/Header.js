@@ -3,6 +3,7 @@ import { LOGO_URL } from '../utils/constants'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
 import userContext from '../utils/userContext'
+import { useSelector } from 'react-redux'
 
 function handleReload() {
   window.location.reload(true)
@@ -44,6 +45,10 @@ const {loggedInUser} = useContext(userContext)
     setonhover(false)
   }
 
+  //subscribing to the store using Selector 
+  const cartItems = useSelector((store)=>store.cart.items)
+  // console.log(cartItems)
+
   return (
     <div className="header relative  flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
       <div className="logo-container">
@@ -68,7 +73,9 @@ const {loggedInUser} = useContext(userContext)
           </li>
           <li className="p-4 hover:text-orange-500">
             {' '}
-            <i className="fas fa-shopping-cart mx-1"></i> Cart
+            <span className='relative -top-[0.9rem] left-[1.2rem] text-orange-500 font-bold' >{cartItems.length}</span>
+            <i className="fas fa-shopping-cart mx-1"></i> 
+            <Link to="/cart">Cart</Link> 
           </li>
           <li className="p-4 hover:text-orange-500">
             {' '}

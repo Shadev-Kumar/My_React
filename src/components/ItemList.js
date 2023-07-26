@@ -1,4 +1,5 @@
 import React from 'react'
+import { addItem } from '../utils/cartSlice'
 
 import {
   DUMMY_IMAGE,
@@ -6,14 +7,21 @@ import {
   NONVEG_LOGO,
   VEG_LOGO,
 } from '../utils/constants'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../utils/cartSlice'
 
 const ItemList = ({ items }) => {
   // console.log(items)
+  const dispatch = useDispatch()
+
+  handleAddItem = (item) => {
+    dispatch(addItem(item))
+  }
   return (
     <div>
-      {items.map((item,index) => (
+      {items.map((item, index) => (
         <React.Fragment key={item.card.info.id}>
-          <div className="flex justify-between " >
+          <div className="flex justify-between ">
             <div className="flex flex-col justify-center">
               <span className="py-1">
                 {item.card?.info?.itemAttribute?.vegClassifier === 'NONVEG' && (
@@ -56,13 +64,19 @@ const ItemList = ({ items }) => {
                   alt="Dummy Image"
                 />
               )}
-              <button className="bg-[#d6ccc2] p-2 rounded-md w-16 md:w-24 shadow-md text-base font-medium hover:shadow-lg hover:bg-orange-500 hover:font-semibold">
+              <button
+                className="bg-[#d6ccc2] p-2 rounded-md w-16 md:w-24 shadow-md text-base font-medium hover:shadow-lg hover:bg-orange-500 hover:font-semibold"
+                onClick={() => handleAddItem(item)}
+              >
                 ADD
               </button>
             </div>
           </div>
-          <div className=" my-5 border-b-[1px] border-slate-400 bg-white" key={index}></div>
-          </React.Fragment>
+          <div
+            className=" my-5 border-b-[1px] border-slate-400 bg-white"
+            key={index}
+          ></div>
+        </React.Fragment>
       ))}
     </div>
   )
