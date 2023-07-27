@@ -17,24 +17,25 @@ const MainBody = () => {
     fetchdata()
   }, [])
 
-  // console.log(listofRestaurants)
-
   const fetchdata = async () => {
     const response = await fetch(RES_API_URL)
-
+    // console.log(RES_API_URL)
     const json = await response.json()
     // console.log(json)
-    const restaurantdata = json?.data?.cards[2]?.data?.data?.cards
+    const restaurantdata =
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     setlistofRestaurants(restaurantdata)
     setsearchlistRestaurants(restaurantdata)
     setratinglistofRestaurants(restaurantdata)
   }
 
+  console.log(listofRestaurants)
+  
   useEffect(() => {
     const filteredRestaurant = searchistofRestaurants.filter((res) => {
       return (
-        res.data.name.toLowerCase().includes(searchText.toLowerCase()) ||
-        res.data.cuisines.some((cuisine) =>
+        res.info.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        res.info.cuisines.some((cuisine) =>
           cuisine.toLowerCase().includes(searchText.toLowerCase()),
         )
       )
@@ -46,7 +47,7 @@ const MainBody = () => {
 
   const applyFilter = () => {
     const filtereslist = ratinglistofRestaurants.filter(
-      (res) => res.data.avgRating > 4,
+      (res) => res.info.avgRating > 4,
     )
     setlistofRestaurants(filtereslist)
     setratingFilter(true)
@@ -64,7 +65,7 @@ const MainBody = () => {
 
   if (onlinestatus === false) return <h1>Oops!! You're Offline🤖</h1>
 
-  return listofRestaurants.length === 0 ? (
+  return !listofRestaurants || listofRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className=" justify-center ">
@@ -106,10 +107,10 @@ const MainBody = () => {
         {listofRestaurants.map((restaurant) => (
           <Link
             className="flex "
-            key={restaurant.data.id}
-            to={`/restaurants/${restaurant.data.id}`}
+            key={restaurant.info.id}
+            to={`/restaurants/${restaurant.info.id}`}
           >
-            {restaurant.data.promoted ? (
+            {restaurant.info.promoted ? (
               <RestroCardPromoted resData={restaurant} />
             ) : (
               <RestroCard resData={restaurant} />

@@ -23,11 +23,11 @@ const RestaurantCategory = ({ data, showItems, setshowIndex }) => {
           </span>
           <span className="mx-4">
             {showItems ? (
-              <span class="material-symbols-outlined text-black ">
+              <span className="material-symbols-outlined text-black ">
                 expand_less
               </span>
             ) : (
-              <span class="material-symbols-outlined text-black">
+              <span className="material-symbols-outlined text-black">
                 expand_more
               </span>
             )}

@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
     (x) => x.card?.card?.['@type'] === MENU_ITEMS_TYPE,
   ) || resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
     (x) => x.card?.card?.['@type'] === MENU_ITEMS_TYPE,
-  )
+  ) 
 
   // console.log(menuCategory)
 

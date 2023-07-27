@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector'
-import ItemList from './ItemList'
 import { useDispatch } from 'react-redux'
 import { clearCart,removeItem } from '../utils/cartSlice'
 import CustomAlert from './CustomAlert'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import CartList from './CartList'
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items)
-  //   console.log(cartItems)
+    console.log(cartItems)
 
   const [showCcustomAlert, setshowCcustomAlert] = useState(false)
 
@@ -24,9 +24,9 @@ const Cart = () => {
   const handleonCancel = () => {
     setshowCcustomAlert(false)
   }
-   const handleRemoveItems = () =>{
-    dispatch(removeItem())
-   }
+  //  const handleRemoveItems = () =>{
+  //   dispatch(removeItem())
+  //  }
 
   return (
     <>
@@ -55,15 +55,8 @@ const Cart = () => {
               >
                 Clear Cart
               </button>
-              <button
-                className="mr-2 p-2 bg-[#d6ccc2] rounded-md w-16 md:w-24 shadow-md text-base font-medium hover:shadow-lg hover:bg-orange-500 hover:font-semibold "
-                onClick={handleRemoveItems}
-              >
-                Remove Items
-                {/* work on this */}
-              </button>
             </div>
-            <ItemList items={cartItems} />
+            <CartList items={cartItems} />
           </div>
         )}
       </div>

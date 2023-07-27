@@ -7,15 +7,19 @@ const RestroCard = (props) => {
     name,
     cuisines,
     avgRating,
-    deliveryTime,
+    sla,
     costForTwo,
-  } = resData?.data
+  } = resData?.info
 
   const ratingSymbol =
     avgRating < 4 ? (
-      <span className="material-symbols-outlined text-yellow-400 pb-1">star</span>
+      <span className="material-symbols-outlined text-yellow-400 pb-1">
+        star
+      </span>
     ) : (
-      <span className="material-symbols-outlined text-green-400 pb-1">star</span>
+      <span className="material-symbols-outlined text-green-400 pb-1">
+        star
+      </span>
     )
 
   return (
@@ -30,9 +34,9 @@ const RestroCard = (props) => {
         <p className="py-1">{cuisines.join(', ')}</p>
         <p className="py-2 flex items-center  whitespace-break-spaces">
           {avgRating}
-          {ratingSymbol} • {deliveryTime} MINS
+          {ratingSymbol} • {sla.deliveryTime} MINS
         </p>
-        <p className="py-2">₹{costForTwo / 100} FOR TWO</p>
+        <p className="py-2">{costForTwo}</p>
       </div>
     </>
   )
