@@ -14,7 +14,7 @@ const ItemList = ({ items }) => {
   // console.log(items)
   const dispatch = useDispatch()
 
-  handleAddItem = (item) => {
+ const  handleAddItem = (item) => {
     dispatch(addItem(item))
   }
   return (

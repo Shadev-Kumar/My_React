@@ -13,9 +13,10 @@ const CartList = ({ items }) => {
   console.log(items)
   const dispatch = useDispatch()
 
-  handleAddItem = (item) => {
+  const handleAddItem = (item) => {
     dispatch(addItem(item))
   }
+  
   return (
     <div>
       {items.map((cartitem, index) => (
@@ -59,7 +60,7 @@ const CartList = ({ items }) => {
               </div>
             </div>
             <div className=" w-1/3 flex justify-between items-center">
-              <div className=''>
+              <div className="">
                 <button
                   className="bg-[#d6ccc2] p-2 rounded-md w-16 md:w-24 shadow-md text-base font-medium hover:shadow-lg hover:bg-orange-500 hover:font-semibold"
                   onClick={() => handleAddItem(cartitem)}
@@ -67,7 +68,7 @@ const CartList = ({ items }) => {
                   ADD
                 </button>
               </div>
-              <div className=''>
+              <div className="">
                 <span className="text-sm py-1 font-light">
                   Rs.{' '}
                   {cartitem?.card?.info?.price
