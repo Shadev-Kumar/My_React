@@ -21,9 +21,10 @@ const MainBody = () => {
     const response = await fetch(RES_API_URL)
     // console.log(RES_API_URL)
     const json = await response.json()
-    // console.log(json)
+    console.log(json)
     const restaurantdata =
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
     setlistofRestaurants(restaurantdata)
     setsearchlistRestaurants(restaurantdata)
     setratinglistofRestaurants(restaurantdata)
