@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { LOGO_URL } from '../utils/constants'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
@@ -17,7 +17,7 @@ const Header = () => {
 
   const onlinestatus = useOnlineStatus()
 
-const {loggedInUser} = useContext(userContext)
+  const { loggedInUser } = useContext(userContext)
 
   useEffect(() => {}, [isLoggedIn])
 
@@ -45,8 +45,8 @@ const {loggedInUser} = useContext(userContext)
     setonhover(false)
   }
 
-  //subscribing to the store using Selector 
-  const cartItems = useSelector((store)=>store.cart.items)
+  //subscribing to the store using Selector
+  const cartItems = useSelector((store) => store.cart.items)
   // console.log(cartItems)
 
   return (
@@ -73,9 +73,11 @@ const {loggedInUser} = useContext(userContext)
           </li>
           <li className="p-4 hover:text-orange-500">
             {' '}
-            <span className='relative -top-[0.9rem] left-[1.2rem] text-orange-500 font-bold' >{cartItems.length}</span>
-            <i className="fas fa-shopping-cart mx-1"></i> 
-            <Link to="/cart">Cart</Link> 
+            <span className="relative -top-[0.9rem] left-[1.2rem] text-orange-500 font-bold">
+              {cartItems.length}
+            </span>
+            <i className="fas fa-shopping-cart mx-1"></i>
+            <Link to="/cart">Cart</Link>
           </li>
           <li className="p-4 hover:text-orange-500">
             {' '}

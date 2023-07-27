@@ -31,7 +31,7 @@ const MainBody = () => {
   }
 
   console.log(listofRestaurants)
-  
+
   useEffect(() => {
     const filteredRestaurant = searchistofRestaurants.filter((res) => {
       return (
