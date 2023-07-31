@@ -4,10 +4,10 @@ import ItemList from './ItemList'
 const RestaurantCategory = ({ data, showItems, setshowIndex }) => {
   // console.log(data)
 
-  const [collapsed,setCollapsed]= useState(true);
+  const [collapsed, setCollapsed] = useState(true)
 
   const handleClick = () => {
-    setCollapsed(!collapsed);
+    setCollapsed(!collapsed)
     setshowIndex()
   }
 
@@ -22,18 +22,18 @@ const RestaurantCategory = ({ data, showItems, setshowIndex }) => {
             {data.title} ({data.itemCards.length})
           </span>
           <span className="mx-4">
-            {showItems ? (
+            {collapsed ? (
               <span className="material-symbols-outlined text-black ">
-                expand_less
+                expand_more
               </span>
             ) : (
               <span className="material-symbols-outlined text-black">
-                expand_more
+                expand_less
               </span>
             )}
           </span>
         </div>
-        {!collapsed && showItems  && <ItemList items={data.itemCards} />}
+        {!collapsed && showItems && <ItemList items={data.itemCards} />}
       </div>
     </div>
   )

@@ -50,7 +50,7 @@ const Header = () => {
   // console.log(cartItems)
 
   return (
-    <div className="header relative  flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
+    <div className="header relative z-10    flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
       <div className="logo-container">
         <a href="/" onClick={handleReload}>
           <img
@@ -61,7 +61,7 @@ const Header = () => {
         </a>
       </div>
       <div
-        className={`elements absolute top-[4.5rem] right-[0.5rem] md:flex md:top-[0rem] md:right-[0rem] md:justify-center items-center ${
+        className={`  elements absolute  top-[4.5rem] right-[0.5rem] md:flex md:top-[0rem] md:right-[0rem] md:justify-center items-center ${
           showElements || onhover ? 'visible' : 'hidden'
         }`}
       >
@@ -138,7 +138,7 @@ const Header = () => {
         </ul>
       </div>
       <div
-        className="hamburger mx-6 px-4 sm:bg-white md:hidden cursor-pointer"
+        className="hamburger mx-6 px-4  md:hidden cursor-pointer"
         onClick={handleElementsToogle}
         onMouseEnter={handleHover}
         onMouseLeave={handleHoverleave}

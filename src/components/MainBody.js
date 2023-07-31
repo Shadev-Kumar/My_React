@@ -21,16 +21,17 @@ const MainBody = () => {
     const response = await fetch(RES_API_URL)
     // console.log(RES_API_URL)
     const json = await response.json()
-    console.log(json)
+    // console.log(json)
     const restaurantdata =
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants ||
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     setlistofRestaurants(restaurantdata)
     setsearchlistRestaurants(restaurantdata)
     setratinglistofRestaurants(restaurantdata)
   }
 
-  console.log(listofRestaurants)
+  // console.log(listofRestaurants)
 
   useEffect(() => {
     const filteredRestaurant = searchistofRestaurants.filter((res) => {
@@ -69,7 +70,7 @@ const MainBody = () => {
   return !listofRestaurants || listofRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className=" justify-center ">
+    <div className="relative z-0 justify-center ">
       <div className="flex mr-1  p-1 mt-4  md:p-2 sm:mx-10 md:mt-4 md:mx-[6.5rem] lg:mx-44 justify-between md:justify-center items-center">
         <button
           className={` h-8 m-1 basis-1/4  sm:basis-1/4 md:basis-2/5 lg:basis-2/6 text-[10px] xsm:text-xs sm:text-sm md:text-base  md:px-4 md:py-2 lg:mr-[1.5rem] rounded-lg  transition ease-in-out delay-50 hover:scale-105 flex justify-center items-center ${

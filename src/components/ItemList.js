@@ -1,5 +1,4 @@
-import React from 'react'
-import { addItem } from '../utils/cartSlice'
+import React, { useState } from 'react'
 
 import {
   DUMMY_IMAGE,
@@ -9,14 +8,36 @@ import {
 } from '../utils/constants'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../utils/cartSlice'
+import { useParams } from 'react-router-dom'
+import useRestaurantMenu from '../utils/useRestaurantMenu'
 
 const ItemList = ({ items }) => {
   // console.log(items)
   const dispatch = useDispatch()
+  const [quantity] = useState(1)
 
- const  handleAddItem = (item) => {
-    dispatch(addItem(item))
+  const { resId } = useParams()
+  const resInfo = useRestaurantMenu(resId)
+  const { name, cuisines, areaName } = resInfo?.cards[0]?.card?.card?.info || {}
+  console.log(name)
+
+  const handleAddItem = (item) => {
+    dispatch(
+      addItem({
+        id: item?.card?.info?.id,
+        cname: item?.card?.info?.name,
+        quantity: quantity,
+        price: item?.card?.info?.price,
+        defaultPrice: item?.card?.info?.defaultPrice,
+        vegClassifier: item?.card?.info?.itemAttribute?.vegClassifier,
+        imageId: item?.card?.info?.imageId,
+        name: name,
+        cuisines: cuisines,
+        areaName: areaName,
+      }),
+    )
   }
+
   return (
     <div>
       {items.map((item, index) => (
