@@ -8,7 +8,7 @@ import CartList from './CartList'
 
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart?.items)
-  // console.log(cartItems)
+  console.log(cartItems)
 
   const [showCcustomAlert, setshowCcustomAlert] = useState(false)
 
@@ -55,13 +55,13 @@ const Cart = () => {
             <div className="py-2 mb-4 flex justify-between  ">
               <div className="flex flex-col">
                 <span className="mb-1 text-md font-semibold">
-                  {cartItems[0].name}
+                  {cartItems[0]?.name}
                 </span>
                 <span className="mt-1 hidden text-sm  md:block">
-                  {cartItems[0].cuisines.join(',')}
+                  {cartItems[0]?.cuisines?.join(',')}
                 </span>
                 <span className=" hidden text-sm md:block">
-                  {cartItems[0].areaName}
+                  {cartItems[0]?.areaName}
                 </span>
               </div>
               <button

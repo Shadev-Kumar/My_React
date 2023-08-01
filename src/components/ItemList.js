@@ -19,7 +19,7 @@ const ItemList = ({ items }) => {
   const { resId } = useParams()
   const resInfo = useRestaurantMenu(resId)
   const { name, cuisines, areaName } = resInfo?.cards[0]?.card?.card?.info || {}
-  console.log(name)
+  // console.log(name)
 
   const handleAddItem = (item) => {
     dispatch(

@@ -29,12 +29,12 @@ const AppLayout = () => {
 
   return (
     <Provider store={appStore}>
-    <userContext.Provider value={{ loggedInUser: userName,setuserName }}>
-      <div className="font-sans subpixel-antialiased tracking-wide text-left leading-5 ">
-        <Header />
-        <Outlet />
-      </div>
-    </userContext.Provider>
+      <userContext.Provider value={{ loggedInUser: userName, setuserName }}>
+        <div className="font-sans subpixel-antialiased tracking-wide  leading-5 flex justify-center flex-col">
+          <Header />
+          <Outlet />
+        </div>
+      </userContext.Provider>
     </Provider>
   )
 }

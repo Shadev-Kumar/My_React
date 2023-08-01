@@ -42,15 +42,17 @@ const RestaurantMenu = () => {
       </span>
     )
 
-  return resInfo === null ? (
-    <Shimmer />
-  ) : (
+    // resInfo === null ? (
+    //   <Shimmer />
+    // ) : 
+
+  return (
     <div className="flex justify-center">
       <div className="flex flex-col w-[90%] sm:w-[80%] md:w-[65%] shadow-md bg-[#edede9] rounded-lg m-6 p-2 justify-between  ">
         <div className="resname flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold">{name}</h1>
-            <p className="text-sm ">{cuisines.join(',')}</p>
+            <p className="text-sm ">{cuisines?.join(',')}</p>
             <p className="text-sm ">{areaName} </p>
           </div>
           <div className="py-2 flex flex-col items-center ">
@@ -63,11 +65,11 @@ const RestaurantMenu = () => {
         </div>
         <div className="py-2 my-2 text-md font-semibold">
           <p>
-            {sla.deliveryTime} MINS - {costForTwoMessage}{' '}
+            {sla?.deliveryTime} MINS - {costForTwoMessage}{' '}
           </p>
         </div>
         <div className="py-[1px] bg-[#d6ccc2]">
-          {menuCategory.map((category, index) => (
+          {menuCategory?.map((category, index) => (
             <RestaurantCategory
               key={category?.card?.card.title}
               data={category?.card?.card}

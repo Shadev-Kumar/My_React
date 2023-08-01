@@ -50,7 +50,8 @@ const Header = () => {
   // console.log(cartItems)
 
   return (
-    <div className="header relative z-10    flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
+    <div className='sticky top-0 z-10 '>
+    <div className="header relative z-10  flex justify-between shadow-xl bg-[#d6ccc2] h-20 items-center">
       <div className="logo-container">
         <a href="/" onClick={handleReload}>
           <img
@@ -147,6 +148,7 @@ const Header = () => {
         <div className="line h-0.5 w-6 my-1 bg-black"></div>
         <div className="line h-0.5 w-6 my-1 bg-black"></div>
       </div>
+    </div>
     </div>
   )
 }
