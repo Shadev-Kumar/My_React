@@ -132,7 +132,7 @@ const Header = () => {
           ) : (
             <>
               <li className="p-4 hover:text-orange-500" onClick={handleLogin}>
-                <i className="far fa-user 1 "></i> Sign in
+                <i className="far fa-user 1 "></i>Sign in
               </li>
             </>
           )}

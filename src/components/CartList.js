@@ -12,16 +12,18 @@ const CartList = ({ items }) => {
   // console.log(items)
   const dispatch = useDispatch()
 
-  const totalPrice = items.reduce((total, cartitem) => {
-    return cartitem?.price
-      ? (total += (cartitem?.price / 100) * cartitem?.quantity)
-      : (total += (cartitem?.defaultPrice / 100) * cartitem?.quantity)
-  }, 0)
+  const totalPrice = items
+    .reduce((total, cartitem) => {
+      return cartitem?.price
+        ? (total += (cartitem?.price / 100) * cartitem?.quantity)
+        : (total += (cartitem?.defaultPrice / 100) * cartitem?.quantity)
+    }, 0) 
+    .toFixed(2)
 
   // console.log(`Total : Rs.${totalPrice}`)
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col">
       {items.map((cartitem, index) => (
         <React.Fragment key={cartitem?.id}>
           <div className="flex justify-between ">
@@ -88,16 +90,16 @@ const CartList = ({ items }) => {
                 <span className="flex text-xs sm:text-sm py-1 font-light">
                   Rs.{''}
                   {cartitem?.price
-                    ? (cartitem?.price / 100) * cartitem?.quantity
-                    : (cartitem?.defaultPrice / 100) * cartitem?.quantity}
+                    ? ((cartitem?.price / 100) * cartitem?.quantity).toFixed(2)
+                    : (
+                        (cartitem?.defaultPrice / 100) *
+                        cartitem?.quantity
+                      ).toFixed(2)}
                 </span>
               </div>
             </div>
           </div>
-          <div
-            className=" my-4 "
-            key={index}
-          ></div>
+          <div className=" my-4 " key={index}></div>
         </React.Fragment>
       ))}
       <div className="flex justify-end text-md font-medium pt-4 border-t-[1px] border-slate-400">
