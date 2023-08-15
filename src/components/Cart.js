@@ -9,6 +9,7 @@ import CartList from './CartList'
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart?.items)
   console.log(cartItems)
+  console.log(cartItems[0].resId)
 
   const [showCcustomAlert, setshowCcustomAlert] = useState(false)
 
@@ -25,9 +26,9 @@ const Cart = () => {
     setshowCcustomAlert(false)
   }
 
-  const handleIncreaseItemCount = (id) => {
-    dispatch(increaseItemCount({ id }))
-  }
+  // const handleIncreaseItemCount = (id) => {
+  //   dispatch(increaseItemCount({ id }))
+  // }
 
   return (
     <>
@@ -41,7 +42,6 @@ const Cart = () => {
       <div className="flex justify-center ">
         {cartItems.length === 0 ? (
           <div className="p-4 m-4">
-            {/* use different component EmptyCart.js */}
             <h1 className=""> Your Cart is Empty!</h1>
             <Link to="/">
               <div className="font-semibold bg-slate-300 my-2 p-2 hover:shadow-lg hover:bg-slate-400">
@@ -72,6 +72,12 @@ const Cart = () => {
               </button>
             </div>
             <CartList items={cartItems} />
+            <Link to={`/restaurants/${cartItems[0]?.resId}`}>
+              <div className="font-semibold bg-slate-300 my-2 p-2 hover:shadow-lg hover:bg-slate-400">
+                {' '}
+                Add More items!{' '}
+              </div>
+            </Link>
           </div>
         )}
       </div>

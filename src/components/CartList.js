@@ -25,7 +25,7 @@ const CartList = ({ items }) => {
   return (
     <div className="flex flex-col">
       {items.map((cartitem, index) => (
-        <React.Fragment key={cartitem?.id}>
+        <React.Fragment key={cartitem?.itemid}>
           <div className="flex justify-between ">
             <div className=" m-1/2 flex justify-center items-center">
               {cartitem?.imageId ? (
@@ -71,17 +71,17 @@ const CartList = ({ items }) => {
                 <button
                   onClick={() =>
                     cartitem?.quantity >= 2
-                      ? dispatch(decrQuantity(cartitem?.id))
-                      : dispatch(removeItem(cartitem?.id))
+                      ? dispatch(decrQuantity(cartitem?.itemid))
+                      : dispatch(removeItem(cartitem?.itemid))
                   }
                 >
                   -
                 </button>
                 <div className="w-2 text-xs sm:text-sm flex justify-center items-center">
-                  {cartitem.quantity}
+                  {cartitem?.quantity}
                 </div>
                 <button
-                  onClick={() => dispatch(increaseItemCount(cartitem?.id))}
+                  onClick={() => dispatch(increaseItemCount(cartitem?.itemid))}
                 >
                   +
                 </button>

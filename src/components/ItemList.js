@@ -18,13 +18,14 @@ const ItemList = ({ items }) => {
 
   const { resId } = useParams()
   const resInfo = useRestaurantMenu(resId)
-  const { name, cuisines, areaName } = resInfo?.cards[0]?.card?.card?.info || {}
-  // console.log(name)
+  // console.log(resInfo)
+  const { name, cuisines, areaName,id } = resInfo?.cards[0]?.card?.card?.info || {}
+  // console.log(id)
 
   const handleAddItem = (item) => {
     dispatch(
       addItem({
-        id: item?.card?.info?.id,
+        itemid: item?.card?.info?.id,
         cname: item?.card?.info?.name,
         quantity: quantity,
         price: item?.card?.info?.price,
@@ -34,6 +35,7 @@ const ItemList = ({ items }) => {
         name: name,
         cuisines: cuisines,
         areaName: areaName,
+        resId: id,
       }),
     )
   }
