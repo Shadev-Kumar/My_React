@@ -20,8 +20,6 @@ const CartList = ({ items }) => {
     }, 0) 
     .toFixed(2)
 
-  // console.log(`Total : Rs.${totalPrice}`)
-
   return (
     <div className="flex flex-col">
       {items.map((cartitem, index) => (
