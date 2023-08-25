@@ -47,20 +47,6 @@ it('should load Header component with 0 cart items', () => {
   expect(cartitemnull).toBeInTheDocument()
 })
 
-it('should load Header component with 0 cart items', () => {
-  render(
-    <BrowserRouter>
-      <Provider store={appStore}>
-        <Header />
-      </Provider>
-    </BrowserRouter>,
-  )
-
-  const cartitemnull = screen.getByText(/Cart/)
-
-  expect(cartitemnull).toBeInTheDocument()
-})
-
 it('should change sign in to Shadev on click', () => {
   render(
     <BrowserRouter>
