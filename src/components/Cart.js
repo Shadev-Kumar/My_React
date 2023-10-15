@@ -9,7 +9,7 @@ import CartList from './CartList'
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart?.items)
   console.log(cartItems)
-  console.log(cartItems[0].resId)
+  console.log(cartItems[0]?.resId)
 
   const [showCcustomAlert, setshowCcustomAlert] = useState(false)
 
